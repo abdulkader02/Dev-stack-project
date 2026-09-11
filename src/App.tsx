@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const technologyFetch = async ():Promise<Technology[]> =>{
-    const res = await fetch("/data.json")
+    const res = await fetch(`${import.meta.env.BASE_URL}data.json`)
     if (!res.ok){
       throw new Error("Failed to fetch technologies")
     }
