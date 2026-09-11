@@ -3,9 +3,12 @@ import { FaStar } from "react-icons/fa";
 
 interface TechnologyCardProps {
   technology: Technology;
+  onAddToStack: (technology: Technology) => void;
+  isAdded : boolean;
+
 }
 
-const TechnologyCard = ({ technology }: TechnologyCardProps) => {
+const TechnologyCard = ({ technology, onAddToStack,isAdded  }: TechnologyCardProps) => {
   return (
     <div className="flex min-h-61.25 flex-col rounded-xl border border-[#F1F5F9] bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
       <div className="flex items-start justify-between">
@@ -35,8 +38,18 @@ const TechnologyCard = ({ technology }: TechnologyCardProps) => {
             {technology.rating}
           </span>
         </div>
-        <button className="mt-3 w-full rounded-md bg-[#0A0F1D] font-medium  text-white py-2 transition-opacity hover:bg-[#0F172A]">
-          Add to Stack
+        <button onClick={()=> onAddToStack(technology)}
+        disabled = {isAdded}
+
+        
+        className={`mt-3 w-full items-center rounded-md py-2 font-medium text-white ${
+            isAdded
+              ? "cursor-not-allowed bg-[#99a1af]"
+              : "bg-[#0F172A] hover:bg-[##1e2939]"
+          }`}>
+          {
+            isAdded ? "Added to Stack" : "Add to Stack"
+          }
         </button>
       </div>
     </div>
