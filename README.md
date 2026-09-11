@@ -147,4 +147,13 @@ I used it in `StackPanel`:
 ### 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
 
 A parent passes data to a child through props.
-In this project, TechnologySection passes technology and onAddToStack to TechnologyCard.
+
+In this project, `TechnologySection` passes `technology` and `onAddToStack` to `TechnologyCard`.
+
+The child sends something back by calling the function passed through props.
+
+```tsx
+<TechnologyCard
+  technology={technology}
+  onAddToStack={handleAddToStack}
+/>
