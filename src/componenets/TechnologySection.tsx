@@ -1,6 +1,6 @@
 import { use } from "react";
-import TechnologyCard from "./TechnologyCard";
-import type { Technology } from "../Type/types"
+import TechnologyCard from "./cards/TechnologyCard";
+import type { Technology } from "./Type/types"
 
 type TechnologySectionProps = {
   technologiesPromise: Promise<Technology[]>;

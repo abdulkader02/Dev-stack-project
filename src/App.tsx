@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import Banner from "./componenets/Banner"
 import Navbar from "./componenets/Navbar"
 import type { Technology } from "./componenets/Type/types";
-import TechnologySection from "./componenets/cards/TechnologySection";
+import TechnologySection from "./componenets/TechnologySection";
 
 function App() {
   const technologyFetch = async ():Promise<Technology[]> =>{
