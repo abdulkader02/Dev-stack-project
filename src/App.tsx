@@ -3,6 +3,7 @@ import Banner from "./componenets/Banner"
 import Navbar from "./componenets/Navbar"
 import type { Technology } from "./componenets/Type/types";
 import TechnologySection from "./componenets/TechnologySection";
+import Footer from "./componenets/Footer";
 
 function App() {
   const technologyFetch = async ():Promise<Technology[]> =>{
@@ -20,6 +21,7 @@ function App() {
     <Suspense fallback={<h1 className="flex justify-center font-bold">Loading...</h1>}>
     <TechnologySection technologiesPromise={technologyPromise}/>
     </Suspense>
+    <Footer/>
     </>
   )
 }
