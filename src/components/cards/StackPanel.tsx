@@ -2,13 +2,13 @@ import type { Technology } from "../Type/types";
 import { ImCross } from "react-icons/im";
 
 interface StackPanelProps {
-  selectedTecnology: Technology[];
+  selectedTechnology: Technology[];
   onRemove: (id: string) => void;
   onRemoveAll: () => void;
 }
 
 const StackPanel = ({
-  selectedTecnology,
+  selectedTechnology,
   onRemove,
   onRemoveAll,
 }: StackPanelProps) => {
@@ -22,21 +22,21 @@ const StackPanel = ({
 
       {/* Selected Technology Count */}
       <p className="mt-2 text-sm text-[#94A3B8]">
-        {selectedTecnology.length}{" "}
-        {selectedTecnology.length === 1
+        {selectedTechnology.length}{" "}
+        {selectedTechnology.length === 1
           ? "Technology"
           : "Technologies"}{" "}
         Selected
       </p>
 
       {/* Empty State */}
-      {selectedTecnology.length === 0 ? (
+      {selectedTechnology.length === 0 ? (
         <div className="mt-4 flex h-24 items-center justify-center rounded-xl border border-dashed border-[#E2E8F0] text-[#94A3B8]">
           <p>Your stack is empty.</p>
         </div>
       ) : (
         <div className="mt-4 space-y-2">
-          {selectedTecnology.map((technology) => (
+          {selectedTechnology.map((technology) => (
             <div
               key={technology.id}
               className="flex items-center justify-between rounded-lg border border-[#E2E8F0] px-3 py-2"
@@ -73,7 +73,7 @@ const StackPanel = ({
       )}
 
       {/* Remove All */}
-      {selectedTecnology.length > 0 && (
+      {selectedTechnology.length > 0 && (
         <button
           onClick={onRemoveAll}
           className="mt-6 w-full rounded-md border border-[#ED8C85] py-2 font-semibold text-[#D82C20] hover:bg-red-50"

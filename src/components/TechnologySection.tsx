@@ -15,12 +15,12 @@ const TechnologySection = ({
 }: TechnologySectionProps) => {
   const technologies = use(technologiesPromise);
 
-  const [selectedTecnology, setSelectedTecnology] =
+  const [selectedTechnology, setSelectedTechnology] =
     useState<Technology[]>([]);
 
   // Add Technology
   const handleAddToStack = (technology: Technology) => {
-    const alreadyAdded = selectedTecnology.some(
+    const alreadyAdded = selectedTechnology.some(
       (item) => item.id === technology.id,
     );
 
@@ -29,8 +29,8 @@ const TechnologySection = ({
       return;
     }
 
-    setSelectedTecnology([
-      ...selectedTecnology,
+    setSelectedTechnology([
+      ...selectedTechnology,
       technology,
     ]);
       toast.success(
@@ -40,13 +40,13 @@ const TechnologySection = ({
 
   // Remove Single Technology
   const handleRemove = (id: string) => {
-    setSelectedTecnology(
-      selectedTecnology.filter(
+    setSelectedTechnology(
+      selectedTechnology.filter(
         (technology) => technology.id !== id,
       ),
     );
 
-    const technology = selectedTecnology.find(
+    const technology = selectedTechnology.find(
       (technology) => technology.id === id,
     );
 
@@ -59,7 +59,7 @@ const TechnologySection = ({
 
   // Remove All Technologies
   const handleRemoveAll = () => {
-    setSelectedTecnology([]);
+    setSelectedTechnology([]);
      toast.info(
       "All technologies removed from your stack!",
     );
@@ -94,7 +94,7 @@ const TechnologySection = ({
                   key={technology.id}
                   technology={technology}
                   onAddToStack={handleAddToStack}
-                  isAdded={selectedTecnology.some(
+                  isAdded={selectedTechnology.some(
                     (item) => item.id === technology.id,
                   )}
                 />
@@ -105,7 +105,7 @@ const TechnologySection = ({
           {/* Your Stack */}
           <div className="lg:col-span-1">
             <StackPanel
-              selectedTecnology={selectedTecnology}
+              selectedTechnology={selectedTechnology}
               onRemove={handleRemove}
               onRemoveAll={handleRemoveAll}
             />

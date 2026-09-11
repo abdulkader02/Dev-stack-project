@@ -20,10 +20,10 @@ const Banner = () => {
           {/* buttons */}
 
           <div className="flex items-center mt-5 gap-4">
-            <button className="rounded-md bg-linear-to-r from-orange-500 to-pink-500 font-semibold px-5 py-3 text-white text-sm hover:opacity-80 transtion">
+            <button className="rounded-md bg-linear-to-r from-orange-500 to-pink-500 font-semibold px-5 py-3 text-white text-sm hover:opacity-80 transition">
               Explore Technologies
             </button>
-            <button className="border border-[#E5E7EB] rounded-md bg-white text-sm font-medium px-5 py-3 transition hover:bg-pink-400">
+            <button className="border border-[#E5E7EB] rounded-md bg-white text-sm font-medium px-5 py-3 transition hover:bg-pink-300">
               Learn More
             </button>
           </div>
