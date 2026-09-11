@@ -25,7 +25,7 @@ const TechnologySection = ({
     );
 
     if (alreadyAdded) {
-      toast.error(`${technology.name} is already in your stack!`);
+      toast.warning(`${technology.name} is already in your stack!`);
       return;
     }
 
@@ -33,6 +33,9 @@ const TechnologySection = ({
       ...selectedTecnology,
       technology,
     ]);
+      toast.success(
+    `${technology.name} added to your stack!`,
+  );
   };
 
   // Remove Single Technology
@@ -42,11 +45,24 @@ const TechnologySection = ({
         (technology) => technology.id !== id,
       ),
     );
+
+    const technology = selectedTecnology.find(
+      (technology) => technology.id === id,
+    );
+
+    if (technology) {
+      toast.info(
+        `${technology.name} removed from your stack!`,
+      );
+    }
   };
 
   // Remove All Technologies
   const handleRemoveAll = () => {
     setSelectedTecnology([]);
+     toast.info(
+      "All technologies removed from your stack!",
+    );
   };
 
   return (
