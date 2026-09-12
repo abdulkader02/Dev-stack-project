@@ -27,7 +27,7 @@ Users can explore technologies by category, difficulty, and rating, then add the
 ### 3. 📱 Responsive Design
 - Desktop-friendly layout.
 - Tablet-responsive grid.
-- Mobile-friendly navigation and cards.(Pending...)
+- Mobile-friendly navigation and cards.
 - Clean and modern UI based on the provided design.
 
 ---
